@@ -14,9 +14,10 @@ def add(connection):
     abort(400, 'No data received')
   entity = json.loads(postBody)
   entity["_id"] = int(round(time.time() * 1000)) # current time in milli
-  for k in ["_id", "action", "data"]:
+  for k in ["_id", "key", "action", "data"]:
     if not entity.has_key(k):
       abort(400, 'No %s specified' % k)
+    if entity['key'] not "awesomeness"
   try:
     db['pyBus'].save(entity)
     return "saved"

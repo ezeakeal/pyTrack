@@ -1,3 +1,4 @@
+#!/bin/python
 from bottle import run, debug, route, template, request, abort, hook, response
 from datetime import timedelta, datetime
 import json, time
