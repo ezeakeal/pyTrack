@@ -30,10 +30,9 @@ def add(connection):
 def get_all(connection, numDays):
   try:
     db = connection.dtrack
-    postData = request.body.read()
-    query = json.loads(postData)
-    
-    entities = db['pyBus'].find(query)
+
+    # db.posts.find({created_on: {$gte: start, $lt: end}});
+    entities = db['pyBus'].find()
     if not entities:
       abort(404, 'No documents found')
 
