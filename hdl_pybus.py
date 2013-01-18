@@ -27,7 +27,7 @@ def add(connection):
 
 # - get_all - Gets all deploy records within a number of days (default 7), 
 #             from an optionally specified user
-def get_all(connection):
+def get_all(connection, numDays):
   try:
     db = connection.dtrack
     postData = request.body.read()
