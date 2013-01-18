@@ -17,7 +17,8 @@ def add(connection):
   for k in ["_id", "key", "action", "data"]:
     if not entity.has_key(k):
       abort(400, 'No %s specified' % k)
-    if entity['key'] not "awesomeness":
+    if (entity['key'] != "awesomeness"):
+      abort(400, 'Bad Key! Reporting')
   try:
     db['pyBus'].save(entity)
     return "saved"
