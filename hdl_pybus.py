@@ -31,13 +31,14 @@ def get_all(connection, numDays):
   try:
     db = connection.dtrack
 
-    # db.posts.find({created_on: {$gte: start, $lt: end}});
+    #entities = db['pyBus'].find({created_on: {$gte: start, $lt: end}});
     entities = db['pyBus'].find()
     if not entities:
       abort(404, 'No documents found')
 
     returnData = []
     for entity in entities:
+      entity['key'] = "Ssshhh.. its a secret"
       returnData.append(entity)
     return json.dumps(returnData)
   except Exception, e:
