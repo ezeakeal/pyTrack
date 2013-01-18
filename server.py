@@ -26,13 +26,13 @@ def enable_cors():
 #################################
 # Handlers for PyBus
 #################################
-@route('/lwd/add', method="POST")
+@route('/api/pybus/add', method="POST")
 def lwd_add():
   return hdl_pybus.add(connection)
     
 # - get_all - Gets all posts within a number of days
-@route('/lwd/get_all')
-@route('/lwd/get_all/:numDays')
+@route('/api/pybus/get_all')
+@route('/api/pybus/get_all/:numDays')
 def lwd_get_all(numDays=7):
   return hdl_pybus.get_all(connection, numDays)
 
